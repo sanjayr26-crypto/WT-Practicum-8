@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Block Bridge - Media Queries</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #0d1b2a;
+            color: #e0e1dd;
+        }
+
+        /* Flexbox navigation bar (from Practicum 6) */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            background-color: #1b263b;
+            padding: 15px 40px;
+            border-bottom: 2px solid #00b4d8;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            box-sizing: border-box;
+            z-index: 10;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: 900;
+            color: #00b4d8;
+        }
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+            flex-wrap: wrap;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-links li a {
+            text-decoration: none;
+            color: #e0e1dd;
+            font-size: 16px;
+        }
+        .nav-links li a:hover {
+            color: #90e0ef;
+        }
+
+        /* Features section heading */
+        .features-heading {
+            text-align: center;
+            margin-top: 100px;
+            color: #00b4d8;
+        }
+        .features-heading p {
+            color: #e0e1dd;
+            font-size: 14px;
+        }
+
+        /* Base layout: 3 columns (desktop) */
+        .features-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            padding: 20px 40px 60px;
+        }
+
+        .feature-card {
+            background-color: #1b263b;
+            border: 1px solid #00b4d8;
+            border-radius: 8px;
+            padding: 25px;
+            text-align: center;
+        }
+        .feature-card h3 {
+            color: #00b4d8;
+            margin-top: 0;
+        }
+        .feature-card p {
+            color: #e0e1dd;
+            font-size: 14px;
+            margin-bottom: 0;
+        }
+
+        /* Media query: Tablet - 2 columns */
+        @media (max-width: 1024px) {
+            .features-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Media query: Mobile - 1 column */
+        @media (max-width: 600px) {
+            .features-container {
+                grid-template-columns: 1fr;
+                padding: 15px 20px 40px;
+            }
+            nav {
+                padding: 15px 20px;
+            }
+            .feature-card h3 {
+                font-size: 18px;
+            }
+            .feature-card p {
+                font-size: 13px;
+            }
+        }
+
+        /* Device-specific optimization: landscape phones */
+        @media (max-width: 900px) and (orientation: landscape) {
+            .features-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Block Bridge</div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="https://aboutus.com">About Us</a></li>
+            <li><a href="https://ourwebsite.com">Our Website</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="features-heading">
+        <h2>Block Bridge Platform Features</h2>
+        <p>Resize the browser to see the layout adapt via media queries</p>
+    </div>
+
+    <div class="features-container">
+        <div class="feature-card">
+            <h3>Decentralized Ledger</h3>
+            <p>Every transaction is recorded across a distributed network of nodes.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Smart Contracts</h3>
+            <p>Automated, self-executing agreements remove the need for intermediaries.</p>
+        </div>
+        <div class="feature-card">
+            <h3>End-to-End Encryption</h3>
+            <p>Data is encrypted at every stage of a transaction's lifecycle.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Instant Settlements</h3>
+            <p>Transactions confirm in seconds, not days.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Audit Transparency</h3>
+            <p>Every record is publicly verifiable without exposing private data.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Cross-Chain Support</h3>
+            <p>Compatible with multiple blockchain networks and wallets.</p>
+        </div>
+    </div>
+
+</body>
+</html>
